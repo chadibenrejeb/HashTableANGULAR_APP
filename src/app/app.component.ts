@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { HashTableService } from './hash-table.service';
+import { TableCanvasComponent } from './table-canvas/table-canvas.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'hash-table-gui';
+export class AppComponent implements AfterViewInit {
+  @ViewChild(TableCanvasComponent) tableCanvasComponent!: TableCanvasComponent;
+
+  constructor(public hashTableService: HashTableService) {}
+
+  ngAfterViewInit() {
+    this.hashTableService.setTableCanvasComponent(this.tableCanvasComponent);
+  }
 }
