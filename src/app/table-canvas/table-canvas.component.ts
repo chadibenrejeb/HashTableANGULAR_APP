@@ -1,3 +1,4 @@
+
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { HashTableService } from '../hash-table.service';
 

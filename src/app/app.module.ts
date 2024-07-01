@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Add this line
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';  // Add this line
 
 import { AppComponent } from './app.component';
 import { TableCanvasComponent } from './table-canvas/table-canvas.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
-import { HashTableService } from './hash-table.service';
 
 @NgModule({
   declarations: [
@@ -15,9 +15,10 @@ import { HashTableService } from './hash-table.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule // Add this line
+    HttpClientModule,
+    FormsModule  // Add this line
   ],
-  providers: [HashTableService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

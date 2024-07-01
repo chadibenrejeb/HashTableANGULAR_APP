@@ -8,6 +8,7 @@ import { TableCanvasComponent } from './table-canvas/table-canvas.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+  title = " hashtable-gui"
   @ViewChild(TableCanvasComponent) tableCanvasComponent!: TableCanvasComponent;
 
   constructor(public hashTableService: HashTableService) {}

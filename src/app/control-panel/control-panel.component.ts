@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { HashTableService } from '../hash-table.service';
 
@@ -31,7 +32,9 @@ export class ControlPanelComponent {
   }
 
   displayTable(): void {
-    this.message = this.hashTableService.display();
+    this.hashTableService.display().subscribe((tableString) => {
+      this.message = tableString;
+    });
   }
 
   getTableSize(): void {
